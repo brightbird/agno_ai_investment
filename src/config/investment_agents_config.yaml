@@ -3,9 +3,10 @@
 
 # 全局配置
 model_config:
-  default_model: "qwen-plus-latest"
+  default_model: "qwen-plus-2025-04-28"
+  team_coordinator_model: "qwen-max-latest"  # 团队协调者使用更强的模型
   available_models:
-    - "qwen-plus-latest"
+    - "qwen-plus-2025-04-28"
     - "qwen-max"
     - "qwen-max-latest"
 
