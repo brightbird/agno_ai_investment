@@ -1,0 +1,21 @@
+{
+  "holdings": {
+    "AAPL": 100,
+    "MSFT": 50
+  },
+  "cash": 100000,
+  "history": [
+    {
+      "date": "2025-05-24T17:33:55.269997",
+      "action": "buy",
+      "symbol": "AAPL",
+      "shares": 100
+    },
+    {
+      "date": "2025-05-24T17:33:55.270427",
+      "action": "buy",
+      "symbol": "MSFT",
+      "shares": 50
+    }
+  ]
+}

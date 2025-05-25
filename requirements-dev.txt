@@ -1,0 +1,47 @@
+# 开发环境依赖包
+
+# 测试框架
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.0.0
+pytest-mock>=3.10.0
+
+# 代码格式化
+black>=23.0.0
+isort>=5.12.0
+
+# 代码检查
+flake8>=6.0.0
+mypy>=1.0.0
+pylint>=2.17.0
+
+# 文档生成
+mkdocs>=1.4.0
+mkdocs-material>=9.0.0
+mkdocs-mermaid2-plugin>=0.6.0
+
+# 开发工具
+pre-commit>=3.0.0
+bandit>=1.7.0  # 安全检查
+safety>=2.0.0  # 依赖安全检查
+
+# 性能分析
+memory-profiler>=0.60.0
+line-profiler>=4.0.0
+
+# 调试工具
+ipdb>=0.13.0
+pdbpp>=0.10.0
+
+# API 文档
+fastapi[all]>=0.100.0
+
+# 数据库迁移（如果需要）
+alembic>=1.10.0
+
+# 环境管理
+python-dotenv>=1.0.0
+
+# 类型检查扩展
+types-requests>=2.31.0
+types-PyYAML>=6.0.0 
