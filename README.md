@@ -15,10 +15,11 @@
 - 🎩 **多投资大师视角**: Warren Buffett, Charlie Munger, Peter Lynch 等7位大师
 - 🏦 **投资组合分析**: 综合多角度投资建议和风险评估
 - 📊 **实时数据分析**: 集成Yahoo Finance实时股票数据
-- 🌐 **Web界面**: 基于Agno Playground的现代化对话界面
+- 🌐 **统一Web界面**: 基于Agno Playground的现代化对话界面，**同时支持个人Agents和团队协作**
 - 🧠 **智能推理**: 使用阿里云通义千问模型驱动分析
 - 💾 **历史记录**: 自动保存对话历史和分析结果
 - 🏆 **投资大师团队**: 基于Agno Team接口的协作分析
+- ⚡ **双模式演示**: 在同一个Playground中体验个人专家分析和团队协作分析
 
 ## 🏗️ 项目结构
 
@@ -46,7 +47,7 @@ agno_ai_investment/
 
 ## 🚀 快速开始
 
-> ✅ **系统状态**：Agno AI投资分析系统运行完全正常！如果您看到一些404日志信息，这是Agno Playground的正常行为，不影响使用。
+> ✅ **系统状态**：Agno AI投资分析系统运行完全正常！**Playground现在同时支持个人Agents和Teams功能**，您可以在同一个界面中体验不同的分析模式。
 
 ### 1. 环境配置
 
@@ -78,24 +79,32 @@ cp .env.example .env
 - 访问 [阿里云百炼平台](https://bailian.console.aliyun.com/)
 - 创建应用并获取API Key
 
-### 3. 启动系统
+### 3. 启动统一Playground系统
 
 ```bash
 # 首次使用需要认证
 ag setup
 
-# 启动Playground服务
-bash scripts/start_playground.sh
+# 启动统一Playground服务（同时支持Agents和Teams）
+python apps/playground.py
 
-# 或启动投资大师团队
-python apps/investment_team.py
+# 或使用快速启动脚本
+bash scripts/start_playground.sh
 ```
 
-### 4. 访问界面
+### 4. 访问统一界面
 
 1. 访问：**https://app.agno.com/playground**
 2. 选择 `localhost:7777` 端点
-3. 开始与投资大师对话！
+3. **选择分析模式**：
+   - **Agents模式**: 选择个人投资大师进行专业分析
+   - **Teams模式**: 选择投资团队进行协作分析
+4. 开始与投资大师对话！
+
+## 🎯 双模式分析体验
+
+### 🤖 个人Agents模式
+在 **Agents** 部分，您可以选择任意一位投资大师进行专业分析：
 
 ## 👨‍💼 投资大师团队
 
@@ -109,21 +118,39 @@ python apps/investment_team.py
 | 🌊 Ray Dalio | 全天候策略 | 分散投资与风险平价 |
 | 🔢 Joel Greenblatt | 魔法公式 | 量化价值投资 |
 | ⚡ David Tepper | 困境投资 | 特殊情况投资 |
-| 🏦 投资组合分析师 | 综合建议 | 多角度投资组合优化 |
+| 🏦 投资组合综合分析师 | 综合建议 | 多角度投资组合优化 |
+
+### 🏆 Teams协作模式
+在 **Teams** 部分，您可以选择投资团队进行协作分析：
+
+| 团队 | 成员 | 协作特色 |
+|------|------|----------|
+| 🏆 巴菲特-芒格投资分析团队 | Warren Buffett + Charlie Munger | 价值投资 + 多学科思维的完美结合 |
 
 ## 🏆 投资大师团队协作
 
-### 新功能：巴菲特-芒格投资分析团队
+### 统一Playground中的团队功能
 
-基于 [Agno Team 接口](https://docs.agno.com/introduction/agents#multi-agent-teams) 实现的投资大师团队，综合多位投资大师的观点进行深度股票分析。
+**重要特性**：现在您可以在同一个Playground界面中无缝切换使用个人Agents和投资团队！
 
-#### 🎯 团队特色
+#### 🎯 团队协作优势
 - **🎩 Warren Buffett**: 价值投资分析，关注企业护城河和长期价值
 - **🧠 Charlie Munger**: 多学科思维，逆向思考和认知偏误检查
-- **🏆 团队协调者**: 综合两位大师观点，提供平衡建议
+- **🏆 智能协调者**: 基于Agno Team接口，自动综合两位大师观点
+- **📊 结构化输出**: 隐藏技术细节，提供用户友好的分析报告
 
-#### 🚀 快速使用
+#### 🚀 在Playground中使用团队
 
+**方法一：Web界面使用（推荐）**
+```bash
+# 启动统一Playground
+python apps/playground.py
+
+# 访问 https://app.agno.com/playground
+# 在 Teams 部分选择 "🏆 巴菲特-芒格投资分析团队"
+```
+
+**方法二：命令行使用**
 ```bash
 # 运行投资团队分析（默认分析苹果公司）
 python apps/investment_team.py
@@ -132,47 +159,11 @@ python apps/investment_team.py
 python demos/investment_team_demo.py
 ```
 
-#### 📊 分析报告结构
+## 🎯 统一Playground演示
 
-团队分析报告包含以下部分：
-1. **执行摘要**: 投资评级和目标价格
-2. **巴菲特观点**: 价值投资角度分析
-3. **芒格观点**: 多学科思维分析
-4. **观点综合**: 共识与分歧点
-5. **团队建议**: 综合投资建议
-6. **风险提示**: 主要风险因素
+### 在同一界面中体验Agents和Teams
 
-#### 🔧 自定义分析
-
-```python
-from apps.investment_team import InvestmentMasterTeam
-
-# 创建投资团队
-team_manager = InvestmentMasterTeam()
-investment_team = team_manager.create_investment_team()
-
-# 自定义分析任务
-task = """
-请分析特斯拉(TSLA)的投资价值，重点关注：
-1. 电动车市场竞争格局
-2. 自动驾驶技术优势
-3. 能源业务发展前景
-4. 估值合理性分析
-"""
-
-# 执行分析
-investment_team.print_response(task, stream=True)
-```
-
-#### 📚 详细文档
-
-查看 [投资团队使用指南](docs/INVESTMENT_TEAM_GUIDE.md) 了解更多功能和使用方法。
-
-## 🎯 Agent UI 演示
-
-### 在 Agent UI 中使用投资团队
-
-投资大师团队已集成到 Playground 中，可以通过 Agent UI 进行可视化交互。
+**核心优势**：无需切换应用，在同一个Playground中即可体验个人专家分析和团队协作分析。
 
 #### 🚀 快速演示
 
@@ -183,46 +174,44 @@ bash scripts/demo_agent_ui.sh
 # 方法二：运行交互式演示指南
 python demos/agent_ui_demo.py
 
-# 方法三：手动启动
+# 方法三：直接启动统一Playground
 python apps/playground.py
 # 然后访问: https://app.agno.com/playground
 ```
 
-#### 🏗️ Agent UI 使用流程
+#### 🏗️ 统一界面使用流程
 
 1. **启动服务**: 运行 `python apps/playground.py`
 2. **访问界面**: 打开 https://app.agno.com/playground
 3. **连接端点**: 添加 `localhost:7777` 端点
-4. **选择团队**: 点击 "🏆 巴菲特-芒格投资团队"
+4. **选择分析模式**:
+   - **Agents**: 选择个人投资大师（如 🎩 Warren Buffett）
+   - **Teams**: 选择投资团队（🏆 巴菲特-芒格投资分析团队）
 5. **开始分析**: 输入股票分析请求
 
 #### 🎬 推荐演示场景
 
-```bash
-# 基础分析
-"请分析苹果公司(AAPL)的投资价值"
+**个人Agents模式演示**：
+- 选择 🎩 Warren Buffett，询问："请分析苹果公司(AAPL)的投资价值"
+- 选择 🧠 Charlie Munger，询问："从多学科角度分析特斯拉的风险"
+- 选择 📈 Peter Lynch，询问："推荐一些适合成长投资的股票"
 
-# 深度分析
-"请深度分析特斯拉(TSLA)，重点关注其竞争优势和估值合理性"
+**Teams协作模式演示**：
+- 选择 🏆 巴菲特-芒格投资分析团队
+- 询问："请分析微软(MSFT)的长期投资前景"
+- 体验两位大师的协作分析和综合建议
 
-# 对比分析
-"请对比分析微软(MSFT)和苹果(AAPL)，哪个更值得长期投资？"
+#### 📊 分析报告对比
 
-# 宏观分析
-"在当前经济环境下，银行股是否值得投资？以摩根大通(JPM)为例"
-```
+| 模式 | 特点 | 适用场景 |
+|------|------|----------|
+| **个人Agents** | 专业深度分析 | 需要特定投资风格的专业建议 |
+| **Teams协作** | 多角度综合分析 | 需要平衡不同观点的全面分析 |
 
-#### 🎯 演示亮点
+#### 📚 详细文档
 
-- **可视化界面**: 直观的 Web 交互体验
-- **实时对话**: 流畅的多轮对话
-- **团队协作**: 展示巴菲特和芒格的观点整合
-- **结构化输出**: Markdown 格式的专业分析报告
-- **历史记录**: 自动保存对话历史
-
-#### 📚 详细演示指南
-
-查看 [Agent UI 演示指南](docs/AGENT_UI_DEMO_GUIDE.md) 了解完整的演示流程和技巧。
+- [投资团队使用指南](docs/INVESTMENT_TEAM_GUIDE.md) - 了解团队功能详情
+- [Agent UI 演示指南](docs/AGENT_UI_DEMO_GUIDE.md) - 完整的界面使用教程
 
 ## 🛠️ 功能特性
 

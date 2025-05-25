@@ -1,10 +1,16 @@
-# 巴菲特-芒格投资分析团队使用指南
+# 🏆 巴菲特-芒格投资分析团队使用指南
 
-## 概述
+## 📋 概述
 
-基于 [Agno Team 接口](https://docs.agno.com/introduction/agents#multi-agent-teams) 实现的投资大师团队，综合巴菲特和查理·芒格的投资观点进行股票分析。
+基于 [Agno Team 接口](https://docs.agno.com/introduction/agents#multi-agent-teams) 实现的投资大师团队，综合巴菲特和查理·芒格的投资观点进行股票分析。**现已完全集成到统一Playground中，支持Web界面和命令行两种使用方式。**
 
-## 功能特点
+## ✨ 核心特性
+
+### 🌐 统一Playground集成
+- **Web界面**: 在 https://app.agno.com/playground 中直接使用
+- **Teams模式**: 在Teams部分选择投资团队
+- **无缝切换**: 可与个人Agents模式对比使用
+- **实时协作**: 观察团队成员的协作过程
 
 ### 🎩 Warren Buffett Agent
 - **投资哲学**: 价值投资，寻找具有持续竞争优势的优秀企业
@@ -16,14 +22,33 @@
 - **分析重点**: 跨学科分析、认知偏误检查、人性因素
 - **语言风格**: 直言不讳，引用各学科原理
 
-### 🏆 团队协调者
+### 🏆 智能团队协调者
 - **协调模式**: coordinate 模式，综合两位大师观点
-- **输出结构**: 执行摘要、分别观点、综合建议、风险提示
+- **输出优化**: 隐藏技术细节，提供用户友好的分析报告
 - **智能推理**: 使用 ReasoningTools 进行深度分析
 
-## 快速开始
+## 🚀 快速开始
 
-### 1. 环境准备
+### 方法一：统一Playground使用（推荐）
+
+```bash
+# 1. 启动统一Playground
+python apps/playground.py
+
+# 2. 访问Web界面
+# https://app.agno.com/playground
+
+# 3. 连接端点
+# localhost:7777
+
+# 4. 选择投资团队
+# 在Teams部分点击 "🏆 巴菲特-芒格投资分析团队"
+
+# 5. 开始分析
+# 输入: "请分析苹果公司(AAPL)的投资价值"
+```
+
+### 方法二：命令行使用
 
 ```bash
 # 确保已安装依赖
@@ -31,11 +56,7 @@ pip install -r requirements.txt
 
 # 设置环境变量
 export ALIYUN_API_KEY=your_api_key
-```
 
-### 2. 运行投资团队
-
-```bash
 # 直接运行主程序（分析苹果公司）
 python apps/investment_team.py
 
@@ -43,7 +64,7 @@ python apps/investment_team.py
 python demos/investment_team_demo.py
 ```
 
-### 3. 自定义分析
+### 方法三：自定义分析
 
 ```python
 from apps.investment_team import InvestmentMasterTeam
@@ -62,17 +83,29 @@ task = """
 """
 
 # 执行分析
-investment_team.print_response(
-    task,
-    stream=True,
-    stream_intermediate_steps=True,
-    show_full_reasoning=True,
-)
+investment_team.print_response(task, stream=True)
 ```
 
-## 团队架构
+## 🏗️ 团队架构
 
-### Team 模式说明
+### 统一Playground中的Team模式
+
+在统一Playground中，投资团队作为一个Team出现在Teams部分，与个人Agents形成对比：
+
+```python
+# 在playground.py中的实现
+def _create_investment_team(self) -> Team:
+    """创建投资团队（Team模式）"""
+    team_manager = InvestmentMasterTeam()
+    return team_manager.create_investment_team()
+
+# Teams列表中包含
+teams = [
+    self._create_investment_team(),  # 🏆 巴菲特-芒格投资分析团队
+]
+```
+
+### Team 协调模式说明
 
 根据 [Agno 文档](https://docs.agno.com/introduction/agents#multi-agent-teams)，我们使用 `coordinate` 模式：
 
@@ -80,21 +113,15 @@ investment_team.print_response(
 team_leader = Team(
     name="🏆 巴菲特-芒格投资分析团队",
     mode="coordinate",  # 协调模式
-    model=self._create_model("qwen-max-latest"),
+    model=self._get_team_coordinator_model(),
     members=[buffett_agent, munger_agent],
     tools=[ReasoningTools(add_instructions=True)],
-    show_members_responses=True,  # 显示成员回应
+    show_tool_calls=False,  # 隐藏工具调用
+    show_members_responses=False,  # 隐藏成员响应
     enable_agentic_context=True,  # 启用智能上下文
+    share_member_interactions=True,  # 共享成员交互
 )
 ```
-
-### 工作流程
-
-1. **任务分发**: 团队领导者将分析任务分发给巴菲特和芒格 Agent
-2. **独立分析**: 两位大师从各自角度进行深度分析
-3. **观点收集**: 团队领导者收集两位大师的分析结果
-4. **综合判断**: 寻找共识点和分歧点，形成综合建议
-5. **报告输出**: 生成结构化的投资分析报告
 
 ## 分析报告结构
 
