@@ -37,15 +37,15 @@ setup(
     name="agno-ai-investment",
     version=__version__,
     author="Agno AI Investment Team",
-    author_email="your-email@domain.com",  # 替换为您的邮箱
+    author_email="brightbird@example.com",  # 替换为您的邮箱
     description="基于 Agno 框架的多Agent投资分析系统",
     long_description=read_long_description(),
     long_description_content_type="text/markdown",
-    url="https://github.com/your-username/agno_ai_investment",  # 替换为您的GitHub仓库
+    url="https://github.com/brightbird/agno_ai_investment",  # 替换为您的GitHub仓库
     project_urls={
-        "Bug Reports": "https://github.com/your-username/agno_ai_investment/issues",
-        "Source": "https://github.com/your-username/agno_ai_investment",
-        "Documentation": "https://github.com/your-username/agno_ai_investment/blob/main/docs/README.md",
+        "Bug Reports": "https://github.com/brightbird/agno_ai_investment/issues",
+        "Source": "https://github.com/brightbird/agno_ai_investment",
+        "Documentation": "https://github.com/brightbird/agno_ai_investment/blob/main/docs/README.md",
     },
     packages=find_packages(where="src"),
     package_dir={"": "src"},

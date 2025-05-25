@@ -1,11 +1,11 @@
 # 🤖 Agno AI 投资分析系统
 
-![GitHub stars](https://img.shields.io/github/stars/YOUR_USERNAME/agno_ai_investment?style=flat-square)
-![GitHub forks](https://img.shields.io/github/forks/YOUR_USERNAME/agno_ai_investment?style=flat-square)
-![GitHub issues](https://img.shields.io/github/issues/YOUR_USERNAME/agno_ai_investment?style=flat-square)
-![GitHub license](https://img.shields.io/github/license/YOUR_USERNAME/agno_ai_investment?style=flat-square)
+![GitHub stars](https://img.shields.io/github/stars/brightbird/agno_ai_investment?style=flat-square)
+![GitHub forks](https://img.shields.io/github/forks/brightbird/agno_ai_investment?style=flat-square)
+![GitHub issues](https://img.shields.io/github/issues/brightbird/agno_ai_investment?style=flat-square)
+![GitHub license](https://img.shields.io/github/license/brightbird/agno_ai_investment?style=flat-square)
 ![Python version](https://img.shields.io/badge/python-3.8%2B-blue?style=flat-square)
-![Build Status](https://img.shields.io/github/actions/workflow/status/YOUR_USERNAME/agno_ai_investment/ci.yml?style=flat-square)
+![Build Status](https://img.shields.io/github/actions/workflow/status/brightbird/agno_ai_investment/ci.yml?style=flat-square)
 
 基于 [Agno 框架](https://docs.agno.com) 构建的多Agent投资分析系统，集成了多位世界知名投资大师的投资理念和分析方法。
 
